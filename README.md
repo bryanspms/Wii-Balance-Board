@@ -42,8 +42,8 @@ named note 1[^note1]
 
 named note 2[^note2]  
 
-[^1]: My reference.
-[^2]: My other reference.
+[^1]: My footnote 1.
+[^2]: My footnote 2.
 [^note1]:
     Named footnote 1.
 [^note2]:
