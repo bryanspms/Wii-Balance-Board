@@ -27,6 +27,25 @@ Interface designs for the Wii Balance Board.
 ---
 
 ## License & Copyright
-© 2025 [Bryan Price](mailto:bryansp_ms@hotmail.com?subject=Wii%20Balance%20Board%20Interface)  
+© 2025 [Bryan Price](mailto:bryansp_ms@hotmail.com?subject=Wii%20Balance%20Board)  
 This work is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).  
 You are free to share and adapt this material for any purpose, even commercially, provided you give appropriate credit to Bryan Price as the original author.
+
+---
+
+## Footnotes
+footnote 1[^1].
+
+footnote 2[^2].
+
+named note 1[^note1]
+
+named note 2[^note2]  
+
+[^1]: My reference.
+[^2]: My other reference.
+[^note1]:
+    Named footnote 1.
+[^note2]:
+    Named footnote 2.
+
