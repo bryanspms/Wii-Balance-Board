@@ -1,4 +1,4 @@
-# Wii Balance Board
+# Wii Balance Board Interface
 
 Interface designs for the Wii Balance Board.
 
