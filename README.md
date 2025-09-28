@@ -2,6 +2,9 @@
 
 Interface designs for the Wii Balance Board.
 
+
+Parts of the following project[^1] will be used for the actual connection and controler suport:  https://github.com/lshachar/WiiBalanceWalker/releases
+
 ---
 
 ## Steps
@@ -22,7 +25,7 @@ Interface designs for the Wii Balance Board.
 1. Unable to connect the Wii Balance Board via Bluetooth in Windows 11  
    - Disable Bluetooth on your laptop or PC.  Note that you may need to disable the existing bluetooth adapter in Device Manager.
    - Install a [CSR4.0 Mini USB Bluetooth Adapter Wireless Dongle](https://www.amazon.com/dp/B07KC39CCL?ref=ppx_yo2ov_dt_b_fed_asin_title).  Note that you may need to update the drivers for the new device.
-   - Connect the Balance Board to the new Bluetooth adapter per SDK instructions.
+   - Connect the Balance Board to the new Bluetooth adapter per API instructions.
 
 ---
 
@@ -31,21 +34,7 @@ Interface designs for the Wii Balance Board.
 This work is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).  
 You are free to share and adapt this material for any purpose, even commercially, provided you give appropriate credit to Bryan Price as the original author.
 
----
+
 
 ## Footnotes
-footnote 1[^1].
-
-footnote 2[^2].
-
-named note 1[^note1]
-
-named note 2[^note2]  
-
-[^1]: My footnote 1.
-[^2]: My footnote 2.
-[^note1]:
-    Named footnote 1.
-[^note2]:
-    Named footnote 2.
-
+[^1]: This project is made possible by Ishachar and others before me that have worked on the Wii Balance Board:  https://github.com/lshachar/WiiBalanceWalker/releases
