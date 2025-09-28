@@ -20,8 +20,8 @@ Interface designs for the Wii Balance Board.
 
 ## Troubleshooting
 1. Unable to connect the Wii Balance Board via Bluetooth in Windows 11  
-   - Disable Bluetooth on your laptop or PC.  
-   - Install a [CSR4.0 Mini USB Bluetooth Adapter Wireless Dongle](https://www.amazon.com/dp/B07KC39CCL?ref=ppx_yo2ov_dt_b_fed_asin_title).  
+   - Disable Bluetooth on your laptop or PC.  Note that you may need to disable the existing bluetooth adapter.
+   - Install a [CSR4.0 Mini USB Bluetooth Adapter Wireless Dongle](https://www.amazon.com/dp/B07KC39CCL?ref=ppx_yo2ov_dt_b_fed_asin_title).  Note that you may need to update the drivers for the new device.
    - Connect the Balance Board to the Bluetooth adapter per SDK instructions.
 
 ---
