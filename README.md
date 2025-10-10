@@ -3,7 +3,7 @@
 Interface designs for the Wii Balance Board.
 
 
-Parts of the following project[^1] will be used for the actual connection and controler suport:  https://github.com/lshachar/WiiBalanceWalker/releases
+Parts of this project[^1] will be used for the actual connection and controler suport.
 
 ---
 
