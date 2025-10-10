@@ -114,3 +114,89 @@ This way, phones or PCs can connect to the Pi as if it were a modern BLE fitness
 - This approach **preserves the original hardware** — no soldering or irreversible mods.  
 - You can later refine the BLE profile to mimic a **standard HID joystick**, making it plug‑and‑play with emulators or VR apps.  
 - If desired, you can expand the script into a full bridge that automatically connects and re‑broadcasts without manual intervention.
+
+---
+
+## 📝 Code Example:
+```
+#!/usr/bin/env python3
+"""
+Wii Balance Board → BLE Bridge
+--------------------------------
+- Connects to Wii Balance Board via classic Bluetooth
+- Reads weight sensor data
+- Re-broadcasts as BLE characteristics using BlueZ + bleak
+
+Requirements:
+  sudo apt install python3-pip bluetooth bluez python3-bluez
+  pip3 install bleak pybluez
+
+Run:
+  python3 balance_bridge.py
+"""
+
+import asyncio
+import time
+import cwiid
+from bleak import BleakServer, BleakGATTCharacteristic
+
+# Custom UUIDs for BLE service/characteristics
+SERVICE_UUID   = "12345678-1234-5678-1234-56789abcdef0"
+WEIGHT_UUID    = "12345678-1234-5678-1234-56789abcdef1"
+BALANCE_UUID   = "12345678-1234-5678-1234-56789abcdef2"
+
+class BalanceBoardBridge:
+    def __init__(self):
+        self.bb = None
+        self.total_weight = 0.0
+        self.balance_xy = (0.0, 0.0)
+
+    def connect_board(self):
+        print("Press SYNC button on Balance Board now...")
+        self.bb = cwiid.Wiimote()
+        self.bb.rpt_mode = cwiid.RPT_BALANCE | cwiid.RPT_BTN
+        print("Connected to Balance Board.")
+
+    def read_sensors(self):
+        sensors = self.bb.state['balance']
+        # sensors dict: {'right_top':kg, 'right_bottom':kg, 'left_top':kg, 'left_bottom':kg}
+        total = sum(sensors.values())
+        if total > 0:
+            x = (sensors['right_top'] + sensors['right_bottom']
+                 - sensors['left_top'] - sensors['left_bottom']) / total
+            y = (sensors['left_top'] + sensors['right_top']
+                 - sensors['left_bottom'] - sensors['right_bottom']) / total
+        else:
+            x, y = 0.0, 0.0
+        self.total_weight = total
+        self.balance_xy = (x, y)
+        return total, (x, y)
+
+async def run_ble_bridge():
+    bridge = BalanceBoardBridge()
+    bridge.connect_board()
+
+    # Define BLE service + characteristics
+    server = BleakServer(name="BalanceBoardBridge")
+    weight_char = BleakGATTCharacteristic(WEIGHT_UUID, ["read", "notify"])
+    balance_char = BleakGATTCharacteristic(BALANCE_UUID, ["read", "notify"])
+    server.add_service(SERVICE_UUID, [weight_char, balance_char])
+
+    await server.start()
+    print("BLE service started. Advertising as BalanceBoardBridge.")
+
+    try:
+        while True:
+            total, (x, y) = bridge.read_sensors()
+            # Update BLE characteristics
+            await weight_char.write_value(str(total).encode())
+            await balance_char.write_value(f"{x:.3f},{y:.3f}".encode())
+            await asyncio.sleep(0.5)
+    except KeyboardInterrupt:
+        print("Stopping bridge...")
+    finally:
+        await server.stop()
+
+if __name__ == "__main__":
+    asyncio.run(run_ble_bridge())
+```
