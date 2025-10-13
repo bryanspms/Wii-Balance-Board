@@ -1,9 +1,8 @@
-# Wii Balance Board Interface
+# 📝 How to Bridge a Wii Balance Board to Modern Bluetooth LE Using a Raspberry Pi  by Bryan Price
 
-Interface designs for the Wii Balance Board.
+This project makes the Wii Balance Board usable as a modern controller on Windows 11, with integration paths for Unity and Steam.  
+See [How to Bridge a Wii Balance Board](Wii-Balance-Board-Bridge.md) for the full Raspberry Pi setup guide.
 
-
-Parts of this project[^1] will be used for the actual connection and controler suport.
 
 ---
 
