@@ -2,7 +2,7 @@
 _Modernizing the Wii Balance Board for Windows 11, Unity, and Steam._
 
 This project makes the Wii Balance Board usable as a modern controller on Windows 11, with integration paths for Unity and Steam.  
-See [How to Bridge a Wii Balance Board](Wii-Balance-Board-Bridge.md) for the full Raspberry Pi setup guide.  
+See [How to Bridge a Wii Balance Board](docs/Wii-Balance-Board-Bridge.md) for the full Raspberry Pi setup guide.  
 
 ---
 
@@ -31,12 +31,12 @@ _This section will describe configuration options once the bridge is running._
 
 ### 2. Still unable to connect after trying everything else
 If the Balance Board still refuses to connect, the workaround is to bypass Windows’ limitations by bridging it through a Raspberry Pi.  
-See the [Bridge Guide](Wii-Balance-Board-Bridge.md) for detailed instructions.  
+See the [Bridge Guide](docs/Wii-Balance-Board-Bridge.md) for detailed instructions.  
 
 ---
 
 ## License & Copyright
-© 2025 [Bryan Price](mailto:bryansp_ms@hotmail.com?subject=Wii%20Balance%20Board)  
+© 2025 [Bryan Price](mailto:bryansp_ms@hotmail.com?subject=BalanceBridge)  
 
 This work is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).  
 You are free to share and adapt this material for any purpose, even commercially, provided you give appropriate credit to Bryan Price as the original author.  
