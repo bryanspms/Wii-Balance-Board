@@ -1,4 +1,6 @@
-# 📝 How to Bridge a Wii Balance Board to Modern Bluetooth LE Using a Raspberry Pi by Bryan Price
+# BalanceBridge Guide: Wii Balance Board -> BLE with Raspberry Pi
+
+_By Bryan Price - preserving the Wii Balance Board for modern systems._
 
 This guide explains how to use a Raspberry Pi as a bridge between the **Wii Balance Board** (which uses classic Bluetooth) and modern devices that expect **Bluetooth Low Energy (BLE)**. The approach preserves the original hardware while making it usable with Windows 11, phones, or VR setups.
 
